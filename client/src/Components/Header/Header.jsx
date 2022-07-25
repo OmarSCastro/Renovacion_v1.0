@@ -29,25 +29,32 @@ export const Header = () => {
       } 
     },
     {
-      label: 'Gestión',
-      icon: 'pi pi-list',
-      items: [
-        {
-          label: 'Dumps',
-          icon: 'pi pi-table',
-          command: () => {
-            navigate('/dumps');
-          } 
-        },
-        {
-          label: 'SAM',
-          icon: 'pi pi-table',
-          command: () => {
-            navigate('/samcounters');
-          } 
-        }
-      ]
-    }
+      label: 'Sam Counters',
+      icon: 'pi pi-table',
+      command: () => {
+        navigate('/samcounters');
+      } 
+    },
+    // {
+    //   label: 'Gestión',
+    //   icon: 'pi pi-list',
+    //   items: [
+    //     {
+    //       label: 'Dumps',
+    //       icon: 'pi pi-table',
+    //       command: () => {
+    //         navigate('/dumps');
+    //       } 
+    //     },
+    //     {
+    //       label: 'SAM',
+    //       icon: 'pi pi-table',
+    //       command: () => {
+    //         navigate('/samcounters');
+    //       } 
+    //     }
+    //   ]
+    // }
   ]
 
   const start = <a href="https://www.rtp.cdmx.gob.mx/" target="blank">

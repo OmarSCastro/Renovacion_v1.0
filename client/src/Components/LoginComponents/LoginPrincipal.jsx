@@ -3,7 +3,6 @@ import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
 import { Password } from "primereact/password";
 import { Imagen } from "./Imagen";
-import { getAuthorization } from "../../helpers/GetAuthorization";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from "../../auth/context/AuthContext";
@@ -51,8 +50,8 @@ export const LoginPrincipal = () => {
         //text: "Bienvenido Mario",
         icon: 'error',
       });
-      console.log(error.response.data);
-      // navigate('/')
+      setUserValue("");
+      setPassValue("");
 
     }
   }
@@ -64,8 +63,21 @@ export const LoginPrincipal = () => {
   if (timer === true) {
     return <p> Cargando </p>
   }
+
+
+  const handleSubmit = ( e ) => {
+    e.preventDefault();
+
+    validacion();
+
+  }
+
+
   return (
     <div className="bg-bluegray-300 h-screen w-screen flex align-items-center justify-content-center ">
+
+      <form onSubmit={handleSubmit}>
+      
       <div className=" h-30rem w-30rem flex  align-items-center  flex-column justify-content-around">
         <Imagen />
         <span className="p-float-label">
@@ -96,6 +108,9 @@ export const LoginPrincipal = () => {
           onClick={validacion}
         />
       </div>
+
+      </form>
+      
     </div>
   );
 };
